@@ -34,7 +34,7 @@ Retrieves a list of existing user profiles. <br/>
 Supports filtering profiles by email and name. <br/>
 -POST /api/profile/ : Create a new profile<br/>
 <br/>
-**2. Manage Individual Profiles**
+**2. Manage Individual Profiles** <br/>
 -GET /api/profile/<profile_id>/ : View a specific profile <br/>
 Retrieves detailed information about a user profile by profile ID <br/>
 -PUT /api/profile/<profile_id>/ : Update a specific profile <br/>
