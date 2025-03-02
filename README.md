@@ -116,3 +116,44 @@ Authorization: Token abcd1234efgh5678ijkl
 -ModHeader Extension - For testing token authentication in Chrome <br/>
 <br/>
 By following these steps, users can authenticate and securely access the Profiles API. <br/>
+
+
+## Profile Feed API
+### Introduction
+The Profile Feed API is a RESTful API designed to manage user profile feed items <br/>
+It allows users to create, update, retrieve, and delete feed items efficiently <br/>
+This API ensures data validation and provides secure authentication for feed management <br/>
+
+### Features
+**1. Create New Feed Items** <br/>
+Allows logged-in users to create new feed items <br/>
+Ensures authentication to restrict feed creation to the logged-in user <br/>
+**2. Update Feed Items**  <br/>
+Users can edit the content of their previously posted feed items <br/>
+Useful for correcting typos or modifying the content <br/>
+Ensures security by limiting changes to the logged-in user <br/>
+**3. Delete Feed Items** <br/>
+Users can permanently delete their feed items <br/>
+Ensures security by restricting deletions to the logged-in user <br/>
+**4. View Profile Status Updates** <br/>
+Allows all users to view feed items posted by others <br/>
+
+### API Endpoints
+The API is accessible via /api/feed/ and supports the following operations: <br/>
+**1. Manage Feed Items Collection** <br/>
+-GET /api/feed/ : List all feed items <br/>
+Retrieves a list of all existing feed items <br/>
+-POST /api/feed/ : Create a new feed item <br/>
+Allows a logged-in user to post a new feed item <br/>
+**2. Manage Individual Feed Items** <br/>
+-GET /api/feed/<feed_item_id>/ : Retrieve a specific feed item <br/>
+Retrieves detailed information about a feed item by its ID <br/>
+-PUT /api/feed/<feed_item_id>/ : Update a specific feed item <br/>
+Allows users to update their own feed items <br/>
+Requires authentication to ensure only the owner can make changes <br/>
+-PATCH /api/feed/<feed_item_id>/ : Partially update a specific feed item <br/>
+Allows users to modify specific fields of their feed item <br/>
+Example: Correcting a typo without changing the entire content <br/>
+-DELETE /api/feed/<feed_item_id>/ : Delete a specific feed item <br/>
+Permanently removes a feed item from the system <br/>
+Requires authentication to prevent unauthorized deletions <br/>
